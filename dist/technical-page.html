@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Il tuo carrello</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240612032822">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#0b91b7">
+	<meta name="msapplication-TileColor" content="#b91d47">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<meta name="msapplication-config" content="/browserconfig.xml">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700&family=Poppins:wght@400;500;600;700&display=swap&_v=20240612032822" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div data-lp class="header__wrapper">
+				<div class="header__top header-top">
+					<div class="header-top__container">
+						<button aria-label="icona del menu hamburger" type="button" class="header-top__icon icon-menu"><span></span></button>
+						<div class="header-top__contacts">
+							<div class="header-top__contact-phone">
+								<i>T</i> <span>Contattaci al numero:</span> <a href="tel:3486013026" class="phone">348 60 13 026</a>
+							</div>
+						</div>
+						<div class="header-top__actions header-actions">
+							<a href="#" class="header-actions__link header-action-link">
+								<picture><source srcset="img/icons/t-brend.webp" type="image/webp"><img width="26" height="42" class="t-brend" fetchpriority="high" loading="eager" decoding="async" src="img/icons/t-brend.jpg" alt="t-brend"></picture>
+								Novità! Trova tabaccai nella tua zona
+							</a>
+							<a href="#" class="header-actions__action-item">
+								<picture><source srcset="img/icons/user.webp" type="image/webp"><img width="25" height="25" fetchpriority="high" loading="eager" decoding="async" src="img/icons/user.png" alt="utente"></picture>
+							</a>
+							<div class="header-actions__action header-actions__action--search">
+								<button type="button" data-header-search href="#" class="header-actions__action-item">
+									<picture><source srcset="img/icons/search.webp" type="image/webp"><img width="25" height="25" fetchpriority="high" loading="eager" decoding="async" src="img/icons/search.png" alt="ricerca"></picture>
+								</button>
+								<div data-search class="header-search">
+									<div class="header-search__body">
+										<h2 class="header-search__title sub-title">Cerca un prodotto</h2>
+										<form action="#" class="header-search__form form">
+											<div class="header-search__row">
+												<input required placeholder="Parole chiave" type="text" name="search_value" class="header-search__input form__input">
+												<button aria-label="ricerca" type="submit" class="header-search__btn _icon-search"></button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div data-cart-wrapper class="header-actions__action">
+								<button data-cart-link type="button" class="header-actions__action-item header-actions__action-item--cart _active">
+									<picture><source srcset="img/icons/cart.webp" type="image/webp"><img class="cart-i" width="25" height="25" fetchpriority="high" loading="eager" decoding="async" src="img/icons/cart.png" alt="carrello"></picture>
+									<picture><source srcset="img/icons/cart-w.webp" type="image/webp"><img class="cart-w" width="25" height="25" fetchpriority="high" loading="eager" decoding="async" src="img/icons/cart-w.png" alt="carrello"></picture>
+									<span data-cart-quantity class="cart-quantity">3</span>
+								</button>
+								<div data-cart class="header-cart-list">
+									<div class="header-cart-list__body">
+										<ul data-product-list data-empty-cart="Il tuo carrello al momento é vuoto" class="header-cart-list__items scrollbar">
+											<li data-product-item="1" class="header-cart-list__item">
+												<div class="header-cart-list__product product-h-cart-list">
+													<a href="#" class="product-h-cart-list__img-ibg product-h-cart-list__img-ibg_contain">
+														<picture><source srcset="img/products/01.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/products/01.png" alt="narghilè"></picture>
+													</a>
+													<a href="#" class="product-h-cart-list__name sub-title">Narghilè Shisha 2655 mahi</a>
+													<div class="product-h-cart-list__quantity quantity">
+														<button type="button" class="quantity__button quantity__button_minus"></button>
+														<div class="quantity__input">
+															<input autocomplete="off" type="number" name="form[]" value="1">
+														</div>
+														<button type="button" class="quantity__button quantity__button_plus"></button>
+													</div>
+													<div data-price class="product-h-cart-list__price">€ 39,00</div>
+													<button data-remove aria-label="de-carrello" class="product-h-cart-list__cross-del _icon-cross"></button>
+												</div>
+											</li>
+											<li data-product-item="2" class="header-cart-list__item">
+												<div class="header-cart-list__product product-h-cart-list">
+													<a href="#" class="product-h-cart-list__img-ibg product-h-cart-list__img-ibg_contain">
+														<picture><source srcset="img/products/02.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/products/02.png" alt="narghilè"></picture>
+													</a>
+													<a href="#" class="product-h-cart-list__name sub-title">Narghilè Shisha 2641 pulse sefari</a>
+													<div class="product-h-cart-list__quantity quantity">
+														<button type="button" class="quantity__button quantity__button_minus"></button>
+														<div class="quantity__input">
+															<input autocomplete="off" type="number" name="form[]" value="1">
+														</div>
+														<button type="button" class="quantity__button quantity__button_plus"></button>
+													</div>
+													<div data-price class="product-h-cart-list__price">€ 49,00</div>
+													<button data-remove aria-label="de-carrello" class="product-h-cart-list__cross-del _icon-cross"></button>
+												</div>
+											</li>
+											<li data-product-item="3" class="header-cart-list__item">
+												<div class="header-cart-list__product product-h-cart-list">
+													<a href="#" class="product-h-cart-list__img-ibg product-h-cart-list__img-ibg_contain">
+														<picture><source srcset="img/products/03.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/products/03.png" alt="narghilè"></picture>
+													</a>
+													<a href="#" class="product-h-cart-list__name sub-title">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a>
+													<div class="product-h-cart-list__quantity quantity">
+														<button type="button" class="quantity__button quantity__button_minus"></button>
+														<div class="quantity__input">
+															<input autocomplete="off" type="number" name="form[]" value="1">
+														</div>
+														<button type="button" class="quantity__button quantity__button_plus"></button>
+													</div>
+													<div data-price class="product-h-cart-list__price">€ 105,55</div>
+													<button data-remove aria-label="de-carrello" class="product-h-cart-list__cross-del _icon-cross"></button>
+												</div>
+											</li>
+											<li data-product-item="4" class="header-cart-list__item">
+												<div class="header-cart-list__product product-h-cart-list">
+													<a href="#" class="product-h-cart-list__img-ibg product-h-cart-list__img-ibg_contain">
+														<picture><source srcset="img/products/04.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/products/04.png" alt="narghilè"></picture>
+													</a>
+													<a href="#" class="product-h-cart-list__name sub-title">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a>
+													<div class="product-h-cart-list__quantity quantity">
+														<button type="button" class="quantity__button quantity__button_minus"></button>
+														<div class="quantity__input">
+															<input autocomplete="off" type="number" name="form[]" value="1">
+														</div>
+														<button type="button" class="quantity__button quantity__button_plus"></button>
+													</div>
+													<div data-price class="product-h-cart-list__price">€ 39,00</div>
+													<button data-remove aria-label="de-carrello" class="product-h-cart-list__cross-del _icon-cross"></button>
+												</div>
+											</li>
+										</ul>
+										<div data-total-value class="header-cart-list__point">Totale IVA Esclusa: <span>€ 49,00</span></div>
+										<div data-total-value class="header-cart-list__point">Totale carrello: <span>€ 49,00</span></div>
+										<div class="header-cart-list__actions">
+											<button data-h-cart-close type="button" class="header-cart-list__btn btn">CONTINUA SHOPPING</button>
+											<a href="#" class="header-cart-list__btn btn btn--border">VAI ALLA cassa</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header__bottom header-bottom">
+					<div class="header-bottom__container">
+						<a href="#" class="header-bottom__logo logo">
+							<picture><source srcset="img/logo/logo.webp" type="image/webp"><img width="248" height="89" fetchpriority="high" loading="eager" decoding="async" src="img/logo/logo.png" alt="logo Narghile Shisha"></picture>
+						</a>
+						<div class="header-bottom__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="" class="menu__link header-action-link">
+											<picture><source srcset="img/icons/t-brend.webp" type="image/webp"><img class="t-brend" fetchpriority="high" loading="eager" decoding="async" src="img/icons/t-brend.jpg" alt="t-brend"></picture>
+											Novità! Trova tabaccai nella tua zona
+										</a>
+									</li>
+									<li class="menu__item"><a href="" class="menu__link">Narghile</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Accessori</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Tabacchi</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Outlet</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Tabaccai</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Guida al Narghilé</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Blog</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<div class="gray-bg">
+				<section class="elem-indent page__cart cart">
+					<div class="cart__container">
+						<div class="cart__head section-header">
+							<h1 class="section-header__title main-title">Il tuo carrello</h1>
+							<div class="section-header__decorator decorator">
+								<picture><source srcset="img/backgrounds/arch.webp" type="image/webp"><img width="294" height="54" fetchpriority="high" loading="eager" decoding="async" src="img/backgrounds/arch.png" alt="decoratore"></picture>
+							</div>
+						</div>
+						<form data-form="payment" action="#" class="cart__body cart-wrapper">
+							<div class="cart-wrapper__body cart-body">
+								<div class="cart-body__header cart-header">
+									<div class="cart-header__item">Prodotto</div>
+									<div class="cart-header__item">Prezzo (unitario)</div>
+									<div class="cart-header__item">Quantita (colli)</div>
+									<div class="cart-header__item">Totale</div>
+								</div>
+								<ul data-page-cart-list data-empty-cart="Il tuo carrello al momento é vuoto" class="cart-body__content cart-content">
+									<li data-product-id="1" class="cart-content__item cart-item">
+										<div class="cart-item__image-title">
+											<a href="#" class="cart-item__image">
+												<div class="cart-item__img-ibg cart-item-ibg_contain">
+													<picture><source srcset="img/products/01.webp" type="image/webp"><img src="img/products/01.png" alt="product"></picture>
+												</div>
+											</a>
+											<h3 class="cart-item__title"><a href="#">Narghilè Shisha 2655 mahi </a></h3>
+										</div>
+										<div class="cart-item__price"><span class="show-mobile">Prezzo unitario</span> <span>€<mark data-price>39,00</mark></span></div>
+										<div class="cart-item__quantity">
+											<div class="quantity">
+												<button type="button" class="quantity__button quantity__button_minus"></button>
+												<div class="quantity__input">
+													<input data-quantity-cart-item-input autocomplete="off" type="number" name="product1" value="1">
+												</div>
+												<button type="button" class="quantity__button quantity__button_plus"></button>
+											</div>
+										</div>
+										<div class="cart-item__total"><span>Totale:</span>€<mark data-price>39,00</mark></div>
+										<button type="button" class="cart-item__btn-remove cross-del _icon-cross"></button>
+									</li>
+									<li data-product-id="2" class="cart-content__item cart-item">
+										<div class="cart-item__image-title">
+											<a href="#" class="cart-item__image">
+												<div class="cart-item__img-ibg cart-item-ibg_contain">
+													<picture><source srcset="img/products/02.webp" type="image/webp"><img src="img/products/02.png" alt="product"></picture>
+												</div>
+											</a>
+											<h3 class="cart-item__title"><a href="#">Narghilè Shisha 2641 pulse sefari</a></h3>
+										</div>
+										<div class="cart-item__price"><span class="show-mobile">Prezzo unitario</span> <span>€<mark data-price>49,00</mark></span></div>
+										<div class="cart-item__quantity">
+											<div class="quantity">
+												<button type="button" class="quantity__button quantity__button_minus"></button>
+												<div class="quantity__input">
+													<input data-quantity-cart-item-input autocomplete="off" type="number" name="product1" value="1">
+												</div>
+												<button type="button" class="quantity__button quantity__button_plus"></button>
+											</div>
+										</div>
+										<div class="cart-item__total"><span>Totale:</span>€<mark data-price>49,00</mark></div>
+										<button type="button" class="cart-item__btn-remove cross-del _icon-cross"></button>
+									</li>
+									<li data-product-id="3" class="cart-content__item cart-item">
+										<div class="cart-item__image-title">
+											<a href="#" class="cart-item__image">
+												<div class="cart-item__img-ibg cart-item-ibg_contain">
+													<picture><source srcset="img/products/03.webp" type="image/webp"><img src="img/products/03.png" alt="product"></picture>
+												</div>
+											</a>
+											<h3 class="cart-item__title"><a href="#">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a></h3>
+										</div>
+										<div class="cart-item__price"><span class="show-mobile">Prezzo unitario</span> <span>€<mark data-price>105,55</mark></span></div>
+										<div class="cart-item__quantity">
+											<div class="quantity">
+												<button type="button" class="quantity__button quantity__button_minus"></button>
+												<div class="quantity__input">
+													<input data-quantity-cart-item-input autocomplete="off" type="number" name="product1" value="1">
+												</div>
+												<button type="button" class="quantity__button quantity__button_plus"></button>
+											</div>
+										</div>
+										<div class="cart-item__total"><span>Totale:</span>€<mark data-price>105,55</mark></div>
+										<button type="button" class="cart-item__btn-remove cross-del _icon-cross"></button>
+									</li>
+									<li data-product-id="4" class="cart-content__item cart-item">
+										<div class="cart-item__image-title">
+											<a href="#" class="cart-item__image">
+												<div class="cart-item__img-ibg cart-item-ibg_contain">
+													<picture><source srcset="img/products/04.webp" type="image/webp"><img src="img/products/04.png" alt="product"></picture>
+												</div>
+											</a>
+											<h3 class="cart-item__title"><a href="#">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a></h3>
+										</div>
+										<div class="cart-item__price"><span class="show-mobile">Prezzo unitario</span> <span>€<mark data-price>39,00</mark></span></div>
+										<div class="cart-item__quantity">
+											<div class="quantity">
+												<button type="button" class="quantity__button quantity__button_minus"></button>
+												<div class="quantity__input">
+													<input data-quantity-cart-item-input autocomplete="off" type="number" name="product1" value="1">
+												</div>
+												<button type="button" class="quantity__button quantity__button_plus"></button>
+											</div>
+										</div>
+										<div class="cart-item__total"><span>Totale:</span>€<mark data-price>39,00</mark></div>
+										<button type="button" class="cart-item__btn-remove cross-del _icon-cross"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="cart-wrapper__payment cart-payment">
+								<div class="cart-payment__total total-payment">
+									<div class="total-payment__title">Totale carrello:</div>
+									<div class="total-payment__price">Incluso trasporto in provincia di Milano: <span>€ <mark data-price>66,50</mark></span></div>
+								</div>
+								<div data-spollers class="cart-payment__method payment-method">
+									<button type="button" data-spoller class="payment-method__title title-small _spoller-active _icon-arrow-down">Seleziona il metodo di pagamento</button>
+									<ul data-radio-group-error-ms="Installa il sistema di piastre" class="payment-method__body">
+										<li class="payment-method__item radio-btn payment-method-item">
+											<input id="pm-1" type="radio" name="payment_method" value="Bonifico Bancario Anticipato">
+											<label class="sub-title" tabindex="0" for="pm-1">Bonifico Bancario Anticipato</label>
+											<div class="payment-method-item__text">Lorem ipsum dolor sit amet</div>
+										</li>
+										<li class="payment-method__item radio-btn payment-method-item">
+											<input checked id="pm-2" type="radio" name="payment_method" value="paypal">
+											<label class="sub-title" tabindex="0" for="pm-2">PayPal<img src="img/payment/paypal.svg" alt="paypal"></label>
+											<div class="payment-method-item__text">Lorem ipsum dolor sit amet</div>
+										</li>
+									</ul>
+								</div>
+								<div class="cart-payment__add-services payment-method">
+									<button type="button" class="payment-method__title title-small">Servizi aggiuntivi</button>
+									<ul data-additional-services class="payment-method__body">
+										<div class="payment-method__item checkbox-item">
+											<input data-amount="75" id="services-1" name="additional_services" value="Sponda idraulica € 75,00" type="checkbox">
+											<label tabindex="0" for="services-1">Sponda idraulica € 75,00</label>
+										</div>
+										<div class="payment-method__item checkbox-item">
+											<input data-amount="0" id="services-2" name="additional_services" value="Avviso telefonico Gratis" type="checkbox">
+											<label tabindex="0" for="services-2">Avviso telefonico Gratis</label>
+										</div>
+										<div class="payment-method__item checkbox-item">
+											<input data-amount="10" id="services-3" name="additional_services" value="Esempio altro servizio € 10,00" type="checkbox">
+											<label tabindex="0" for="services-3">Esempio altro servizio € 10,00</label>
+										</div>
+									</ul>
+								</div>
+								<button type="submit" class="cart-payment__btn-submit btn">Compra ora</button>
+							</div>
+						</form>
+					</div>
+				</section>
+			</div>
+			<section class="elem-indent-sec page__edit-profile">
+				<div class="edit-profile__container">
+					<div data-tabs class="edit-profile__tabs edit-profile-tabs">
+						<nav data-tabs-titles class="edit-profile-tabs__navigation">
+							<button type="button" class="edit-profile-tabs__title title _tab-active">Modifica il tuo profilo</button>
+							<button type="button" class="edit-profile-tabs__title title">Modifica password</button>
+						</nav>
+						<div data-tabs-body class="edit-profile-tabs__content">
+							<form data-form="modifi-profile" action="#" class="edit-profile-tabs__body modifi-profile">
+								<h3 class="modifi-profile__title title">Il tuo profilo utente</h3>
+								<div class="modifi-profile__body">
+									<div class="modifi-profile__colums">
+										<div class="modifi-profile__item">
+											<label for="ep-1" class="modifi-profile__label">*Nome</label>
+											<input id="ep-1" type="text" name="nome" required placeholder="Text" class="input-item">
+										</div>
+										<div class="modifi-profile__item">
+											<label for="ep-2" class="modifi-profile__label">*Cognome</label>
+											<input id="ep-2" type="text" name="Cognome" required placeholder="Text" class="input-item">
+										</div>
+									</div>
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label for="ep-3" class="modifi-profile__label">Indirizzo:</label>
+											<input id="ep-3" type="text" name="indirizzo" placeholder="Text" class="input-item">
+										</div>
+									</div>
+									<div class="modifi-profile__colums modifi-profile__colums_small">
+										<div class="modifi-profile__item">
+											<label for="ep-4" class="modifi-profile__label">*CAP</label>
+											<input id="ep-4" type="number" name="cap" required placeholder="Text" class="input-item">
+										</div>
+										<div class="modifi-profile__item">
+											<label for="ep-5" class="modifi-profile__label">*Città</label>
+											<input id="ep-5" type="text" name="città" required placeholder="Text" class="input-item">
+										</div>
+									</div>
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label class="modifi-profile__label">*Provincia</label>
+											<select data-scroll="350" data-error-ms="Seleziona la provincia di consegna" data-class-modif="item" class="select-item" name="provincia">
+												<option selected value="Text">Text</option>
+												<option value="Provincia №2">Provincia №2</option>
+												<option value="Provincia №3">Provincia №3</option>
+												<option value="Provincia №4">Provincia №4</option>
+											</select>
+										</div>
+									</div>
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label for="ep-7" class="modifi-profile__label">*Telefono</label>
+											<input id="ep-7" type="number" name="telefono" required placeholder="Text" class="input-item">
+										</div>
+									</div>
+								</div>
+								<div class="modifi-profile__checkbox checkbox-item">
+									<input checked data-error-ms="Si prega di accettare l'informativa sulla privacy" id="ep-8" name="fattura" type="checkbox">
+									<label class="title" data-spoller-checkbox tabindex="0" for="ep-8">Desideri ricevere fattura per i tuoi acquisti ?</label>
+								</div>
+								<div class="modifi-profile__body _open">
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label for="ep-9" class="modifi-profile__label">*Regione sociale</label>
+											<input id="ep-9" type="text" name="regione_sociale" required placeholder="Text" class="input-item">
+										</div>
+									</div>
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label for="ep-10" class="modifi-profile__label">Partita IVA</label>
+											<input id="ep-10" type="text" name="partita_iva" placeholder="Text" class="input-item">
+										</div>
+									</div>
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label for="ep-11" class="modifi-profile__label">Codice fiscale</label>
+											<input id="ep-11" type="text" name="partita_iva" placeholder="Text" class="input-item">
+										</div>
+									</div>
+									<div class="modifi-profile__colums">
+										<div class="modifi-profile__item">
+											<label for="ep-12" class="modifi-profile__label">Codice univoce</label>
+											<input id="ep-12" type="text" name="codice_univoce" placeholder="Text" class="input-item">
+										</div>
+										<div class="modifi-profile__item">
+											<label for="ep-13" class="modifi-profile__label">PEC</label>
+											<input id="ep-13" type="text" name="pec" placeholder="Text" class="input-item">
+										</div>
+									</div>
+								</div>
+								<div class="modifi-profile__checkbox checkbox-item">
+									<input checked data-error-ms="Si prega di accettare l'informativa sulla privacy" id="ep-14" name="un_altro_indirizzo" type="checkbox">
+									<label class="title" data-spoller-checkbox tabindex="0" for="ep-14">Vuoi specificare un indirizzo differente per ia spedizione ?</label>
+									<div class="modifi-profile__sub-checkbox">Potrai selezionarlo in fase di ordine</div>
+								</div>
+								<div class="modifi-profile__body _open">
+									<h3 class="modifi-profile__title title">Indirizzo di spedizione</h3>
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label for="ep-15" class="modifi-profile__label">*Indirizzo:</label>
+											<input id="ep-15" type="text" name="indirizzo_altro" required placeholder="Text" class="input-item">
+										</div>
+									</div>
+									<div class="modifi-profile__colums modifi-profile__colums_small">
+										<div class="modifi-profile__item">
+											<label for="ep-16" class="modifi-profile__label">*CAP</label>
+											<input id="ep-16" type="number" name="cap_altro" required placeholder="Text" class="input-item">
+										</div>
+										<div class="modifi-profile__item">
+											<label for="ep-17" class="modifi-profile__label">*Città</label>
+											<input id="ep-17" type="text" name="città_altro" required placeholder="Text" class="input-item">
+										</div>
+									</div>
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label class="modifi-profile__label">*Provincia</label>
+											<select data-scroll="350" data-error-ms="Seleziona la provincia di consegna" data-class-modif="item" class="select-item" name="provincia_altro">
+												<option value="Text" selected>Text</option>
+												<option value="Provincia №2">Provincia №2</option>
+												<option value="Provincia №3">Provincia №3</option>
+												<option value="Provincia №4">Provincia №4</option>
+											</select>
+										</div>
+									</div>
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label class="modifi-profile__label">*Nome sul campanello</label>
+											<select data-scroll="350" data-error-ms="Seleziona la provincia di consegna" data-class-modif="item" class="select-item" name="nome_sul_campanello">
+												<option value="Text" selected>Text</option>
+												<option value="Provincia №2">Provincia №2</option>
+												<option value="Provincia №3">Provincia №3</option>
+												<option value="Provincia №4">Provincia №4</option>
+											</select>
+										</div>
+									</div>
+									<div class="modifi-profile__row">
+										<div class="modifi-profile__item">
+											<label for="ep-20" class="modifi-profile__label">*Telefono in caso di richieste:</label>
+											<input id="ep-20" type="number" name="indirizzo" required placeholder="Text" class="input-item">
+										</div>
+									</div>
+								</div>
+								<div class="modifi-profile__bottom">
+									<div class="modifi-profile__checkbox checkbox-item">
+										<input data-input-agree data-error-ms="Si prega di accettare l'informativa sulla privacy" id="privacy" name="privacy" type="checkbox">
+										<label tabindex="0" for="privacy">Ho letto <a class="blue" href="#">l'informativa sulla privacy</a> e accetto che i miei dati siano trattati ai sensi del GDPR</label>
+									</div>
+									<button type="submit" class="modifi-profile__btn btn">Iscriviti al sito</button>
+								</div>
+							</form>
+							<form action="#" class="edit-profile-tabs__body modifi-profile modifi-profile--recovery">
+								<h3 class="modifi-profile__title title">Cambia la tua password</h3>
+								<div class="modifi-profile__body">
+									<div class="modifi-profile__colums">
+										<div class="modifi-profile__item">
+											<label for="chp-1" class="modifi-profile__label">*Vecchia password</label>
+											<input id="chp-1" type="password" name="nome" required class="input-item">
+										</div>
+										<div class="modifi-profile__item">
+											<label for="chp-2" class="modifi-profile__label">*Nuova password</label>
+											<input id="chp-2" type="password" name="Cognome" required class="input-item">
+										</div>
+									</div>
+								</div>
+								<div class="modifi-profile__bottom">
+									<button type="submit" class="modifi-profile__btn btn">Salvare</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__authorization authorization">
+				<div class="authorization__container">
+					<div class="authorization__column auth">
+						<h2 class="auth__title title">Accedi allo shop</h2>
+						<form action="#" class="auth__body">
+							<div class="auth__item">
+								<input type="text" name="login" required placeholder="Login" class="input-item">
+							</div>
+							<div class="auth__item">
+								<input type="password" name="password" required placeholder="Password" class="input-item">
+							</div>
+							<div class="auth__actions">
+								<button type="submit" class="auth__submit btn">Login</button>
+								<div class="auth__link"><a href="#">Hai dimenticato la password?</a></div>
+							</div>
+						</form>
+						<div class="auth__message">
+							Non sei ancosa iscritto? <a class="auth__link" href="#">Registrati subito!</a>
+						</div>
+					</div>
+					<div class="authorization__column auth">
+						<h2 class="auth__title title">Hai dimenticato la password?</h2>
+						<div class="auth__subtitle">Inserisci la tua Email: riceverai a breve una password temporanea per accedere</div>
+						<form action="#" class="auth__body">
+							<div class="auth__item">
+								<input type="email" name="email" required placeholder="E-Mail" class="input-item">
+							</div>
+							<div class="auth__actions">
+								<button type="submit" class="auth__submit btn">Recover password</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<div class="page__pagination">
+				<div class="pagination">
+					<div class="pagination__container">
+						<a href="#" disabled class="pagination__arrow pagination__arrow--left _icon-arrow-right">pagina precedente</a>
+						<ul class="pagination__list">
+							<li class="pagination__item">
+								<div class="pagination__link _active">1</div>
+							</li>
+							<li class="pagination__item">
+								<a href="#" class="pagination__link">2</a>
+							</li>
+							<li class="pagination__item">
+								<a href="#" class="pagination__link">3</a>
+							</li>
+							<li class="pagination__item">
+								<div class="pagination__link">...</div>
+							</li>
+							<li class="pagination__item">
+								<a href="#" class="pagination__link">33</a>
+							</li>
+						</ul>
+						<a href="#" class="pagination__arrow pagination__arrow--right _icon-arrow-right">Pagina successiva</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div id="custom-alert" aria-hidden="true" class="popup popup_custom-alert">
+			<div class="popup__wrapper">
+				<div class="popup__content custom-alert">
+					<div class="custom-alert__icon">
+						<picture><source srcset="img/icons/alert.webp" type="image/webp"><img width="50" height="50" loading="lazy" decoding="async" src="img/icons/alert.png" alt="alert"></picture>
+					</div>
+					<div class="custom-alert__text"></div>
+					<button data-close class="custom-alert__btn">Chiudere</button>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer__top top-footer">
+				<div class="top-footer__container">
+					<a href="#" class="top-footer__logo logo">
+						<picture><source srcset="img/logo/logo-w.webp" type="image/webp"><img width="248" height="89" loading="lazy" decoding="async" src="img/logo/logo-w.png" alt="logo Narghile Shisha"></picture>
+					</a>
+					<div class="top-footer__content footer-content">
+						<div class="footer-content__description footer-description">
+							<h2 class="footer-description__title title-small">Lo shop online di articoli originali direttamente a casa tua</h2>
+							<div class="footer-description__about text-small">
+								<p>I nostri narghilè sono prodotti nelle zone del Masherk e rifiniti a mano.</p>
+								<p>Vengono importati direttamente dagli artigiani che li producono al Cairo</p>
+								<p>Ogni narghilè è prodotto in Egitto e lavorato a mano : <br>questa è la ragione per cui sono uno diverso dall’altro</p>
+								<p>Le piccole differenze tra articoli per noi non rappresentano un difetto ma l’eccellenza di un prodotto realizzato a mano.</p>
+							</div>
+						</div>
+						<div class="footer-content__nav-menu footer-menu">
+							<h2 class="footer-menu__title title-small">I nostri prodotti</h2>
+							<ul class="footer-menu__items">
+								<li class="footer-menu__item">
+									<a href="#" class="footer-menu__link">Narghile</a>
+								</li>
+								<li class="footer-menu__item">
+									<a href="#" class="footer-menu__link">Accessori</a>
+								</li>
+								<li class="footer-menu__item">
+									<a href="#" class="footer-menu__link">Tabacchi</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-content__nav-menu footer-menu">
+							<h2 class="footer-menu__title title-small">Info utili</h2>
+							<ul class="footer-menu__items">
+								<li class="footer-menu__item">
+									<a href="#" class="footer-menu__link">Termini e condizioni di utilizzo</a>
+								</li>
+								<li class="footer-menu__item">
+									<a href="#" class="footer-menu__link">Chi siamo</a>
+								</li>
+								<li class="footer-menu__item">
+									<a href="#" class="footer-menu__link">Servizi per negozi e bar</a>
+								</li>
+								<li class="footer-menu__item">
+									<a href="#" class="footer-menu__link">Pagamento sicuro</a>
+								</li>
+								<li class="footer-menu__item">
+									<a href="#" class="footer-menu__link">Spedizioni e resi</a>
+								</li>
+								<li class="footer-menu__item">
+									<a href="#" class="footer-menu__link">Note legali</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__container">
+				<div class="footer__bottom bottom-footer">
+					<div class="bottom-footer__content">
+						<div class="bottom-footer__row">
+							© 2024 Ap Tobacco srl
+							<ul>
+								<li><a href="#">Credits</a></li>
+								<li><a href="#">Mappa del sito</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</div>
+						<div class="bottom-footer__row">Partita IVA 02629410180 - R.E.A. PV - 289038</div>
+					</div>
+					<div class="bottom-footer__payment">
+						<div class="payment-item">
+							<img width="93" height="22" loading="lazy" decoding="async" src="img/payment/paypal.svg" alt="PayPal">
+						</div>
+						<div class="payment-item">
+							<img width="66" height="22" loading="lazy" decoding="async" src="img/payment/visa.svg" alt="Visa">
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script async src="js/app.min.js?_v=20240612032822"></script>
+</body>
+
+</html>

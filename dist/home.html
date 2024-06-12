@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Pagina iniziale</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240612032822">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#0b91b7">
+	<meta name="msapplication-TileColor" content="#b91d47">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<meta name="msapplication-config" content="/browserconfig.xml">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700&family=Poppins:wght@400;500;600;700&display=swap&_v=20240612032822" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div data-lp class="header__wrapper">
+				<div class="header__top header-top">
+					<div class="header-top__container">
+						<button aria-label="icona del menu hamburger" type="button" class="header-top__icon icon-menu"><span></span></button>
+						<div class="header-top__contacts">
+							<div class="header-top__contact-phone">
+								<i>T</i> <span>Contattaci al numero:</span> <a href="tel:3486013026" class="phone">348 60 13 026</a>
+							</div>
+						</div>
+						<div class="header-top__actions header-actions">
+							<a href="#" class="header-actions__link header-action-link">
+								<picture><source srcset="img/icons/t-brend.webp" type="image/webp"><img width="26" height="42" class="t-brend" fetchpriority="high" loading="eager" decoding="async" src="img/icons/t-brend.jpg" alt="t-brend"></picture>
+								Novità! Trova tabaccai nella tua zona
+							</a>
+							<a href="#" class="header-actions__action-item">
+								<picture><source srcset="img/icons/user.webp" type="image/webp"><img width="25" height="25" fetchpriority="high" loading="eager" decoding="async" src="img/icons/user.png" alt="utente"></picture>
+							</a>
+							<div class="header-actions__action header-actions__action--search">
+								<button type="button" data-header-search href="#" class="header-actions__action-item">
+									<picture><source srcset="img/icons/search.webp" type="image/webp"><img width="25" height="25" fetchpriority="high" loading="eager" decoding="async" src="img/icons/search.png" alt="ricerca"></picture>
+								</button>
+								<div data-search class="header-search">
+									<div class="header-search__body">
+										<h2 class="header-search__title sub-title">Cerca un prodotto</h2>
+										<form action="#" class="header-search__form form">
+											<div class="header-search__row">
+												<input required placeholder="Parole chiave" type="text" name="search_value" class="header-search__input form__input">
+												<button aria-label="ricerca" type="submit" class="header-search__btn _icon-search"></button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div data-cart-wrapper class="header-actions__action">
+								<button data-cart-link type="button" class="header-actions__action-item header-actions__action-item--cart _active">
+									<picture><source srcset="img/icons/cart.webp" type="image/webp"><img class="cart-i" width="25" height="25" fetchpriority="high" loading="eager" decoding="async" src="img/icons/cart.png" alt="carrello"></picture>
+									<picture><source srcset="img/icons/cart-w.webp" type="image/webp"><img class="cart-w" width="25" height="25" fetchpriority="high" loading="eager" decoding="async" src="img/icons/cart-w.png" alt="carrello"></picture>
+									<span data-cart-quantity class="cart-quantity">3</span>
+								</button>
+								<div data-cart class="header-cart-list">
+									<div class="header-cart-list__body">
+										<ul data-product-list data-empty-cart="Il tuo carrello al momento é vuoto" class="header-cart-list__items scrollbar">
+											<li data-product-item="1" class="header-cart-list__item">
+												<div class="header-cart-list__product product-h-cart-list">
+													<a href="#" class="product-h-cart-list__img-ibg product-h-cart-list__img-ibg_contain">
+														<picture><source srcset="img/products/01.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/products/01.png" alt="narghilè"></picture>
+													</a>
+													<a href="#" class="product-h-cart-list__name sub-title">Narghilè Shisha 2655 mahi</a>
+													<div class="product-h-cart-list__quantity quantity">
+														<button type="button" class="quantity__button quantity__button_minus"></button>
+														<div class="quantity__input">
+															<input autocomplete="off" type="number" name="form[]" value="1">
+														</div>
+														<button type="button" class="quantity__button quantity__button_plus"></button>
+													</div>
+													<div data-price class="product-h-cart-list__price">€ 39,00</div>
+													<button data-remove aria-label="de-carrello" class="product-h-cart-list__cross-del _icon-cross"></button>
+												</div>
+											</li>
+											<li data-product-item="2" class="header-cart-list__item">
+												<div class="header-cart-list__product product-h-cart-list">
+													<a href="#" class="product-h-cart-list__img-ibg product-h-cart-list__img-ibg_contain">
+														<picture><source srcset="img/products/02.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/products/02.png" alt="narghilè"></picture>
+													</a>
+													<a href="#" class="product-h-cart-list__name sub-title">Narghilè Shisha 2641 pulse sefari</a>
+													<div class="product-h-cart-list__quantity quantity">
+														<button type="button" class="quantity__button quantity__button_minus"></button>
+														<div class="quantity__input">
+															<input autocomplete="off" type="number" name="form[]" value="1">
+														</div>
+														<button type="button" class="quantity__button quantity__button_plus"></button>
+													</div>
+													<div data-price class="product-h-cart-list__price">€ 49,00</div>
+													<button data-remove aria-label="de-carrello" class="product-h-cart-list__cross-del _icon-cross"></button>
+												</div>
+											</li>
+											<li data-product-item="3" class="header-cart-list__item">
+												<div class="header-cart-list__product product-h-cart-list">
+													<a href="#" class="product-h-cart-list__img-ibg product-h-cart-list__img-ibg_contain">
+														<picture><source srcset="img/products/03.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/products/03.png" alt="narghilè"></picture>
+													</a>
+													<a href="#" class="product-h-cart-list__name sub-title">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a>
+													<div class="product-h-cart-list__quantity quantity">
+														<button type="button" class="quantity__button quantity__button_minus"></button>
+														<div class="quantity__input">
+															<input autocomplete="off" type="number" name="form[]" value="1">
+														</div>
+														<button type="button" class="quantity__button quantity__button_plus"></button>
+													</div>
+													<div data-price class="product-h-cart-list__price">€ 105,55</div>
+													<button data-remove aria-label="de-carrello" class="product-h-cart-list__cross-del _icon-cross"></button>
+												</div>
+											</li>
+											<li data-product-item="4" class="header-cart-list__item">
+												<div class="header-cart-list__product product-h-cart-list">
+													<a href="#" class="product-h-cart-list__img-ibg product-h-cart-list__img-ibg_contain">
+														<picture><source srcset="img/products/04.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/products/04.png" alt="narghilè"></picture>
+													</a>
+													<a href="#" class="product-h-cart-list__name sub-title">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a>
+													<div class="product-h-cart-list__quantity quantity">
+														<button type="button" class="quantity__button quantity__button_minus"></button>
+														<div class="quantity__input">
+															<input autocomplete="off" type="number" name="form[]" value="1">
+														</div>
+														<button type="button" class="quantity__button quantity__button_plus"></button>
+													</div>
+													<div data-price class="product-h-cart-list__price">€ 39,00</div>
+													<button data-remove aria-label="de-carrello" class="product-h-cart-list__cross-del _icon-cross"></button>
+												</div>
+											</li>
+										</ul>
+										<div data-total-value class="header-cart-list__point">Totale IVA Esclusa: <span>€ 49,00</span></div>
+										<div data-total-value class="header-cart-list__point">Totale carrello: <span>€ 49,00</span></div>
+										<div class="header-cart-list__actions">
+											<button data-h-cart-close type="button" class="header-cart-list__btn btn">CONTINUA SHOPPING</button>
+											<a href="#" class="header-cart-list__btn btn btn--border">VAI ALLA cassa</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header__bottom header-bottom">
+					<div class="header-bottom__container">
+						<a href="#" class="header-bottom__logo logo">
+							<picture><source srcset="img/logo/logo.webp" type="image/webp"><img width="248" height="89" fetchpriority="high" loading="eager" decoding="async" src="img/logo/logo.png" alt="logo Narghile Shisha"></picture>
+						</a>
+						<div class="header-bottom__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="" class="menu__link header-action-link">
+											<picture><source srcset="img/icons/t-brend.webp" type="image/webp"><img class="t-brend" fetchpriority="high" loading="eager" decoding="async" src="img/icons/t-brend.jpg" alt="t-brend"></picture>
+											Novità! Trova tabaccai nella tua zona
+										</a>
+									</li>
+									<li class="menu__item"><a href="" class="menu__link">Narghile</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Accessori</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Tabacchi</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Outlet</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Tabaccai</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Guida al Narghilé</a></li>
+									<li class="menu__item"><a href="" class="menu__link">Blog</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__main-section main-section">
+				<div data-slider="main-slider" class="main-section__container">
+					<div class="main-section__body">
+						<div class="main-section__image">
+							<div class="main-section__image-ibg main-section__image-ibg_contain">
+								<picture><source srcset="img/main-section/product.webp" type="image/webp"><img width="191" height="655" fetchpriority="high" loading="eager" decoding="async" src="img/main-section/product.jpg" alt="prodotto narghilè"></picture>
+							</div>
+						</div>
+						<div class="main-section__content-body">
+							<div class="main-section__content main-content">
+								<div class="main-content__sub-title">Made in Egypt</div>
+								<h1 class="main-content__title">Narghilé artigianali di elevata qualità direttamente dal produttore del Cairo.</h1>
+								<div class="main-content__text">In pronta consegna con corriere espresso.</div>
+							</div>
+							<div data-slider-pagination class="main-section__pagination slider-pagination"></div>
+						</div>
+					</div>
+					<div data-slider class="main-section__slider main-slider swiper">
+						<div class="main-slider__wrapper swiper-wrapper">
+							<div class="main-slider__slide-ibg swiper-slide">
+								<picture><source srcset="img/main-section/01.webp" type="image/webp"><img width="288" height="170" loading="lazy" decoding="async" src="img/main-section/01.jpg" alt="città del cairo"></picture>
+							</div>
+							<div class="main-slider__slide-ibg swiper-slide">
+								<picture><source srcset="img/main-section/02.webp" type="image/webp"><img width="288" height="170" loading="lazy" decoding="async" src="img/main-section/02.jpg" alt="città del cairo"></picture>
+							</div>
+							<div class="main-slider__slide-ibg swiper-slide">
+								<picture><source srcset="img/main-section/03.webp" type="image/webp"><img width="288" height="170" loading="lazy" decoding="async" src="img/main-section/03.jpg" alt="città del cairo"></picture>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="elem-indent page__services services">
+				<div class="services__container">
+					<div class="services__head section-header">
+						<h2 class="section-header__title main-title">Benvenuto su Narghileshisha</h2>
+						<div class="section-header__decorator decorator">
+							<picture><source srcset="img/backgrounds/arch.webp" type="image/webp"><img width="294" height="54" loading="lazy" decoding="async" src="img/backgrounds/arch.png" alt="decoratore"></picture>
+						</div>
+					</div>
+					<ul class="services__items">
+						<li class="services__item">
+							<div class="service-item">
+								<div class="service-item__img-ibg">
+									<picture><source srcset="img/services/01.webp" type="image/webp"><img width="200" height="200" loading="lazy" decoding="async" src="img/services/01.jpg" alt="ricambi e accessori per narghilè"></picture>
+								</div>
+								<div class="service-item__body">
+									<h2 class="service-item__title sub-title">Vendita ricambi e accessori originali per narghilé</h2>
+									<div class="service-item__text">Specifici per i nostri prodotti e universali.</div>
+								</div>
+							</div>
+						</li>
+						<li class="services__item">
+							<div class="service-item">
+								<div class="service-item__img-ibg">
+									<picture><source srcset="img/services/02.webp" type="image/webp"><img width="200" height="200" loading="lazy" decoding="async" src="img/services/02.jpg" alt="narghilè"></picture>
+								</div>
+								<div class="service-item__body">
+									<h2 class="service-item__title sub-title">Prodotti realizzati dai migliori artigiani del Cairo</h2>
+									<div class="service-item__text">Ogni narghilè è prodotto e rifinito a mano, pertanto è un pezzo unico.</div>
+								</div>
+							</div>
+						</li>
+						<li class="services__item">
+							<div class="service-item">
+								<div class="service-item__img-ibg">
+									<picture><source srcset="img/services/03.webp" type="image/webp"><img width="200" height="200" loading="lazy" decoding="async" src="img/services/03.jpg" alt="consegna con corriere espresso dhl"></picture>
+								</div>
+								<div class="service-item__body">
+									<h2 class="service-item__title sub-title">Spedizioni garantite con corriere espresso, gratuite per ordini sopra i 130€</h2>
+									<div class="service-item__text">Ci avvaliamo dei migliori corrieri per effettuare consegne rapide e integre. Assistenza telefonica pre e post vendita. Call center in Italia.</div>
+								</div>
+							</div>
+						</li>
+						<li class="services__item">
+							<div class="service-item">
+								<div class="service-item__img-ibg">
+									<picture><source srcset="img/services/04.webp" type="image/webp"><img width="200" height="200" loading="lazy" decoding="async" src="img/services/04.jpg" alt="agente di vendita"></picture>
+								</div>
+								<div class="service-item__body">
+									<h2 class="service-item__title sub-title">Lavora con noi, cerchiamo agenti di vendita</h2>
+									<div class="service-item__text">AP Tobacco cerca te: invia il tuo curriculum ad <a href="#">info@narghileshisha.com</a></div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<div class="gray-bg">
+				<section class="elem-indent page__products products">
+					<div class="products__container">
+						<div class="products__head section-header">
+							<h2 class="section-header__title main-title">La nostra vetrina</h2>
+							<div class="section-header__decorator decorator">
+								<picture><source srcset="img/backgrounds/arch.webp" type="image/webp"><img width="294" height="54" loading="lazy" decoding="async" src="img/backgrounds/arch.png" alt="decoratore"></picture>
+							</div>
+						</div>
+						<form action="#" class="products__actions products-actions form">
+							<div class="products-actions__item form__item">
+								<label for="categoria" class="form__label sub-title">Categoria</label>
+								<select data-scroll="350" name="categoria" id="categoria">
+									<option selected value="Narghile">Narghile</option>
+									<option value="Value #1">Value #1</option>
+									<option value="Value #2">Value #2</option>
+									<option value="Value #3">Value #3</option>
+								</select>
+							</div>
+							<div class="products-actions__item form__item">
+								<label for="tipologia-di-prodotto" class="form__label sub-title">Tipologia di prodotto</label>
+								<select data-scroll="350" name="tipologia_di_prodotto" id="tipologia-di-prodotto _icon-arrow">
+									<option selected value="Tutte">Tutte</option>
+									<option value="Value #1">Value #1</option>
+									<option value="Value #2">Value #2</option>
+									<option value="Value #3">Value #3</option>
+								</select>
+							</div>
+						</form>
+						<ul class="products__items">
+							<li class="products__item">
+								<div data-product-id="1" class="product-card">
+									<div class="product-card__image-body">
+										<a href="#" class="product-card__image-ibg product-card__image-ibg_contain">
+											<picture><source srcset="img/products/01.webp" type="image/webp"><img width="288" height="480" loading="lazy" decoding="async" src="img/products/01.png" alt="narghilè"></picture>
+										</a>
+										<div class="product-card__labels">
+											<div class="product-label">Nuovi arrivi</div>
+										</div>
+									</div>
+									<div class="product-card__body">
+										<a href="#" class="product-card__title sub-title">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a>
+										<div class="product-card__price">€ 39,00</div>
+										<div class="product-card__actions">
+											<button data-add-to-cart class="product-card__btn btn">Acquista</button>
+											<a href="#" class="product-card__btn btn btn--border">dettagli</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="products__item">
+								<div data-product-id="2" class="product-card">
+									<div class="product-card__image-body">
+										<a href="#" class="product-card__image-ibg product-card__image-ibg_contain">
+											<picture><source srcset="img/products/02.webp" type="image/webp"><img width="288" height="480" loading="lazy" decoding="async" src="img/products/02.png" alt="narghilè"></picture>
+										</a>
+										<div class="product-card__labels">
+											<div class="product-label">Nuovi arrivi</div>
+											<div class="product-label product-label--red">offerta</div>
+										</div>
+									</div>
+									<div class="product-card__body">
+										<a href="#" class="product-card__title sub-title">Narghilè Shisha 2641 pulse sefari</a>
+										<div class="product-card__price">€ 49,00</div>
+										<div class="product-card__actions">
+											<button data-add-to-cart class="product-card__btn btn">Acquista</button>
+											<a href="#" class="product-card__btn btn btn--border">dettagli</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="products__item">
+								<div data-product-id="3" class="product-card">
+									<div class="product-card__image-body">
+										<a href="#" class="product-card__image-ibg product-card__image-ibg_contain">
+											<picture><source srcset="img/products/03.webp" type="image/webp"><img width="288" height="480" loading="lazy" decoding="async" src="img/products/03.png" alt="narghilè"></picture>
+										</a>
+										<div class="product-card__labels">
+											<div class="product-label">Nuovi arrivi</div>
+										</div>
+									</div>
+									<div class="product-card__body">
+										<a href="#" class="product-card__title sub-title">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a>
+										<div class="product-card__price">€ 105,55</div>
+										<div class="product-card__actions">
+											<button data-add-to-cart class="product-card__btn btn">Acquista</button>
+											<a href="#" class="product-card__btn btn btn--border">dettagli</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="products__item">
+								<div data-product-id="4" class="product-card">
+									<div class="product-card__image-body">
+										<a href="#" class="product-card__image-ibg product-card__image-ibg_contain">
+											<picture><source srcset="img/products/04.webp" type="image/webp"><img width="288" height="480" loading="lazy" decoding="async" src="img/products/04.png" alt="narghilè"></picture>
+										</a>
+										<div class="product-card__labels">
+											<div class="product-label">Nuovi arrivi</div>
+										</div>
+									</div>
+									<div class="product-card__body">
+										<a href="#" class="product-card__title sub-title">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a>
+										<div class="product-card__price">€ 39,00</div>
+										<div class="product-card__actions">
+											<button data-add-to-cart class="product-card__btn btn">Acquista</button>
+											<a href="#" class="product-card__btn btn btn--border">dettagli</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="products__item">
+								<div data-product-id="5" class="product-card">
+									<div class="product-card__image-body">
+										<a href="#" class="product-card__image-ibg product-card__image-ibg_contain">
+											<picture><source srcset="img/products/05.webp" type="image/webp"><img width="288" height="480" loading="lazy" decoding="async" src="img/products/05.png" alt="narghilè"></picture>
+										</a>
+										<div class="product-card__labels">
+											<div class="product-label">Nuovi arrivi</div>
+											<div class="product-label product-label--red">offerta</div>
+										</div>
+									</div>
+									<div class="product-card__body">
+										<a href="#" class="product-card__title sub-title">Narghilè Shisha 2641 pulse sefari</a>
+										<div class="product-card__price">€ 49,00</div>
+										<div class="product-card__actions">
+											<button data-add-to-cart class="product-card__btn btn">Acquista</button>
+											<a href="#" class="product-card__btn btn btn--border">dettagli</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="products__item">
+								<div data-product-id="6" class="product-card">
+									<div class="product-card__image-body">
+										<a href="#" class="product-card__image-ibg product-card__image-ibg_contain">
+											<picture><source srcset="img/products/06.webp" type="image/webp"><img width="288" height="480" loading="lazy" decoding="async" src="img/products/06.png" alt="narghilè"></picture>
+										</a>
+										<div class="product-card__labels">
+											<div class="product-label">Nuovi arrivi</div>
+										</div>
+									</div>
+									<div class="product-card__body">
+										<a href="#" class="product-card__title sub-title">Narghilè Shisha 2653 lamar ampolla a vite kit completo</a>
+										<div class="product-card__price">€ 105,00</div>
+										<div class="product-card__actions">
+											<button data-add-to-cart class="product-card__btn btn">Acquista</button>
+											<a href="#" class="product-card__btn btn btn--border">dettagli</a>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="load-more">
+							<a href="#" class="load-more__btn-more btn">Scopri tutti i nostri Narghilé</a>
+						</div>
+					</div>
+				</section>
+			</div>
+			<section class="elem-indent page__blog blog">
+				<div class="blog__container">
+					<div class="blog__head section-header">
+						<h2 class="section-header__title main-title">Ultime dal blog</h2>
+						<div class="section-header__decorator decorator">
+							<picture><source srcset="img/backgrounds/arch.webp" type="image/webp"><img width="294" height="54" loading="lazy" decoding="async" src="img/backgrounds/arch.png" alt="decoratore"></picture>
+						</div>
+					</div>
+					<ul class="blog__articles">
+						<li class="blog__article">
+							<a href="#" class="article-card">
+								<div class="article-card__image-ibg">
+									<picture><source srcset="img/blog/01.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/blog/01.png" alt="articolo foto "></picture>
+								</div>
+								<div class="article-card__body">
+									<div class="article-card__title sub-title">Narghilè shisha: come funziona? Come faccio a fare funzionare questo regalo che mi hanno fatto?</div>
+								</div>
+							</a>
+						</li>
+						<li class="blog__article">
+							<a href="#" class="article-card">
+								<div class="article-card__image-ibg">
+									<picture><source srcset="img/blog/02.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/blog/02.png" alt="articolo foto "></picture>
+								</div>
+								<div class="article-card__body">
+									<div class="article-card__title sub-title">Narghilè: cosa c'è dentro la melassa per la shisha</div>
+								</div>
+							</a>
+						</li>
+						<li class="blog__article">
+							<a href="#" class="article-card">
+								<div class="article-card__image-ibg">
+									<picture><source srcset="img/blog/03.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/blog/03.png" alt="articolo foto "></picture>
+								</div>
+								<div class="article-card__body">
+									<div class="article-card__title sub-title">La melassa della shisha contiene tabacco o nicotina?</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="load-more">
+						<a href="#" class="load-more__btn-more btn">Scopri tutti gli articoli</a>
+					</div>
+				</div>
+			</section>
+			<div class="gray-bg">
+				<div class="elem-indent page__actions-cards actions-cards">
+					<div class="actions-cards__container">
+						<div class="actions-cards__items">
+							<div class="actions-cards__item">
+								<div class="action-card">
+									<h2 class="action-card__title title">Contattaci</h2>
+									<div class="action-card__body">
+										<h3 class="action-card__sub-title sub-title-small">A.P. Tobacco s.r.l.</h3>
+										<a href="tel:3486013026" class="action-card__text">Tel. 348 60 13 026</a>
+										<div class="action-card__link text-small">
+											Email: <a class="text-blue" href="mailto:info@narghileshisha.com">info@narghileshisha.com</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="actions-cards__item">
+								<div class="action-card">
+									<h2 class="action-card__title title">Newsletter</h2>
+									<div class="action-card__body">
+										<form action="#" class="action-card__form form">
+											<div class="form__item">
+												<input class="form__input" required placeholder="Digita la tua E-Mail" type="email" name="email">
+											</div>
+											<button type="submit" class="action-card__btn-submit btn">iscriviti</button>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="actions-cards__item">
+								<div class="action-card">
+									<h2 class="action-card__title title">Contattaci</h2>
+									<div class="action-card__body">
+										<ul class="action-card__socials socials">
+											<li class="socials__item">
+												<a href="#" class="socials__link _icon-twitter">Twitter</a>
+											</li>
+											<li class="socials__item">
+												<a href="#" class="socials__link _icon-facebook">Facebook</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	</main>
+	<footer class="footer">
+		<div class="footer__top top-footer">
+			<div class="top-footer__container">
+				<a href="#" class="top-footer__logo logo">
+					<picture><source srcset="img/logo/logo-w.webp" type="image/webp"><img width="248" height="89" loading="lazy" decoding="async" src="img/logo/logo-w.png" alt="logo Narghile Shisha"></picture>
+				</a>
+				<div class="top-footer__content footer-content">
+					<div class="footer-content__description footer-description">
+						<h2 class="footer-description__title title-small">Lo shop online di articoli originali direttamente a casa tua</h2>
+						<div class="footer-description__about text-small">
+							<p>I nostri narghilè sono prodotti nelle zone del Masherk e rifiniti a mano.</p>
+							<p>Vengono importati direttamente dagli artigiani che li producono al Cairo</p>
+							<p>Ogni narghilè è prodotto in Egitto e lavorato a mano : <br>questa è la ragione per cui sono uno diverso dall’altro</p>
+							<p>Le piccole differenze tra articoli per noi non rappresentano un difetto ma l’eccellenza di un prodotto realizzato a mano.</p>
+						</div>
+					</div>
+					<div class="footer-content__nav-menu footer-menu">
+						<h2 class="footer-menu__title title-small">I nostri prodotti</h2>
+						<ul class="footer-menu__items">
+							<li class="footer-menu__item">
+								<a href="#" class="footer-menu__link">Narghile</a>
+							</li>
+							<li class="footer-menu__item">
+								<a href="#" class="footer-menu__link">Accessori</a>
+							</li>
+							<li class="footer-menu__item">
+								<a href="#" class="footer-menu__link">Tabacchi</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-content__nav-menu footer-menu">
+						<h2 class="footer-menu__title title-small">Info utili</h2>
+						<ul class="footer-menu__items">
+							<li class="footer-menu__item">
+								<a href="#" class="footer-menu__link">Termini e condizioni di utilizzo</a>
+							</li>
+							<li class="footer-menu__item">
+								<a href="#" class="footer-menu__link">Chi siamo</a>
+							</li>
+							<li class="footer-menu__item">
+								<a href="#" class="footer-menu__link">Servizi per negozi e bar</a>
+							</li>
+							<li class="footer-menu__item">
+								<a href="#" class="footer-menu__link">Pagamento sicuro</a>
+							</li>
+							<li class="footer-menu__item">
+								<a href="#" class="footer-menu__link">Spedizioni e resi</a>
+							</li>
+							<li class="footer-menu__item">
+								<a href="#" class="footer-menu__link">Note legali</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer__container">
+			<div class="footer__bottom bottom-footer">
+				<div class="bottom-footer__content">
+					<div class="bottom-footer__row">
+						© 2024 Ap Tobacco srl
+						<ul>
+							<li><a href="#">Credits</a></li>
+							<li><a href="#">Mappa del sito</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+					<div class="bottom-footer__row">Partita IVA 02629410180 - R.E.A. PV - 289038</div>
+				</div>
+				<div class="bottom-footer__payment">
+					<div class="payment-item">
+						<img width="93" height="22" loading="lazy" decoding="async" src="img/payment/paypal.svg" alt="PayPal">
+					</div>
+					<div class="payment-item">
+						<img width="66" height="22" loading="lazy" decoding="async" src="img/payment/visa.svg" alt="Visa">
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	</div>
+	<script async src="js/app.min.js?_v=20240612032822"></script>
+</body>
+
+</html>
