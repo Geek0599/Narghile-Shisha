@@ -23,6 +23,10 @@
   display: block;
 }
 
+._icon-arrow-double:before {
+  content: "\e909";
+}
+
 ._icon-check:before,
 .checkbox-item label:before {
   content: "\e908";
@@ -637,10 +641,9 @@ body::after {
 }
 
 .breadcrumbs__container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto 1fr auto;
-  grid-template-columns: auto 1fr auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -650,13 +653,20 @@ body::after {
   row-gap: 0.625rem;
 }
 
+.breadcrumbs__row {
+  display: inline;
+}
+
 .breadcrumbs__link-back {
+  white-space: nowrap;
+  margin-left: auto;
   font-weight: 500;
   color: #133EC6;
 }
 
 .breadcrumbs__text {
-  white-space: nowrap;
+  display: inline-block;
+  padding-right: 0.3125rem;
   color: #4C565C;
   font-weight: 600;
   text-transform: uppercase;
@@ -825,9 +835,61 @@ body::after {
   transition: color 0.3s ease 0s;
 }
 
+.d-none {
+  display: none !important;
+}
+
 ._hold {
   opacity: 0.5;
   pointer-events: none;
+}
+
+.btn-go-up {
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #133EC6;
+  color: #fff;
+  font-size: 1.375rem;
+  position: fixed;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 2;
+  -webkit-transform: scale(1.35);
+      -ms-transform: scale(1.35);
+          transform: scale(1.35);
+  opacity: 0;
+}
+
+.btn-go-up::before {
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+}
+
+.loaded .btn-go-up {
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
+}
+
+.btn-go-up._show {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
 }
 
 .fly-image-ibg {
@@ -893,19 +955,8 @@ body::after {
 
 .phone {
   font-weight: 700;
+  font-size: 1.125rem;
   color: #133EC6;
-}
-
-@supports (font-size: clamp( 0.75rem , 0.3984375rem  +  1.171875vw , 1.125rem )) {
-  .phone {
-    font-size: clamp( 0.75rem , 0.3984375rem  +  1.171875vw , 1.125rem );
-  }
-}
-
-@supports not (font-size: clamp( 0.75rem , 0.3984375rem  +  1.171875vw , 1.125rem )) {
-  .phone {
-    font-size: calc(0.75rem + 0.375 * (100vw - 30rem) / 32);
-  }
 }
 
 .logo {
@@ -1196,6 +1247,7 @@ body::after {
 }
 
 .header-top {
+  min-height: 3.4375rem;
   position: relative;
   z-index: 11;
   background-color: #f5f5f5;
@@ -2382,10 +2434,10 @@ body::after {
 }
 
 .service-item__img-ibg {
-  max-width: 71.43%;
   margin: 0 auto;
   margin-bottom: 1rem;
-  padding-bottom: 70.5467372134%;
+  width: 12.5rem;
+  height: 12.5rem;
   border: 0.0625rem solid #545352;
   border-radius: 50%;
   overflow: hidden;
@@ -3038,8 +3090,10 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0.625rem;
-  align-items: center;
 }
 
 .product-content-actions__unavailable {
@@ -3347,8 +3401,8 @@ mark[data-price] {
       -ms-flex-align: center;
           align-items: center;
   gap: 1.25rem;
-  -ms-grid-columns: 41.5% 17% 15% 17% 30px;
-  grid-template-columns: 41.5% 17% 15% 17% 30px;
+  -ms-grid-columns: 41.5% 17% 15% 17.3% 30px;
+  grid-template-columns: 41.5% 17% 15% 17.3% 30px;
 }
 
 @supports (padding-top: clamp( 0.9375rem , 0.8007478632rem  +  0.6837606838vw , 1.4375rem )) {
@@ -6817,20 +6871,15 @@ html.with-fancybox body.hide-scrollbar {
 
 @media (max-width: 56.25em) {
   .breadcrumbs__container {
-    -ms-grid-columns: auto auto;
-    grid-template-columns: auto auto;
-    -ms-grid-rows: auto 1fr;
-    grid-template-rows: auto 1fr;
+    display: block;
   }
 
   .breadcrumbs__link-back {
-    -ms-grid-column-align: end;
-        justify-self: end;
+    display: none;
   }
 
   .breadcrumbs__text {
-    -ms-grid-column-align: start;
-        justify-self: start;
+    display: none;
   }
 
   .breadcrumbs__list {
@@ -6859,7 +6908,7 @@ html.with-fancybox body.hide-scrollbar {
   }
 
   .header-top__contact-phone a {
-    font-weight: 500;
+    font-size: 1.0625rem;
   }
 
   .header-cart-list__point {
@@ -7152,8 +7201,17 @@ html.with-fancybox body.hide-scrollbar {
 }
 
 @media (max-width: 29.99875em) {
+  .breadcrumbs {
+    padding: 0.9375rem 0;
+  }
+
   .load-more__btn-more {
     padding: 1.125rem 2.5625rem;
+  }
+
+  .btn-go-up {
+    right: 1.25rem;
+    bottom: 1.25rem;
   }
 
   .cart-quantity {
@@ -7174,6 +7232,10 @@ html.with-fancybox body.hide-scrollbar {
 
   .header-top__container {
     gap: 1rem;
+  }
+
+  .header-top__container {
+    gap: 0.625rem;
   }
 
   .header-actions > * {
@@ -7330,6 +7392,10 @@ html.with-fancybox body.hide-scrollbar {
     width: 100%;
   }
 
+  .product-content-actions__delivery,
+  .product-content-actions__unavailable {
+    line-height: 140%;
+  }
 
   .article__image-ibg {
     padding-bottom: 70%;
@@ -7366,16 +7432,27 @@ html.with-fancybox body.hide-scrollbar {
   }
 }
 
-@media (max-width: 22.1875em) {
+@media (max-width: 23.125em) {
+  .header-top__contact-phone i {
+    display: none;
+  }
+}
+
+@media (max-width: 22.8125em) {
   .header-top__container {
     padding-left: 0.3125rem;
-    gap: 0.625rem;
   }
 }
 
 @media (max-width: 22.5em) {
-  .header-top__contact-phone i {
-    display: none;
+  .header-top__contact-phone a {
+    font-size: 0.9375rem;
+  }
+
+  .header-actions__action,
+  .header-actions__action-item {
+    -ms-flex-preferred-size: 3.25rem;
+        flex-basis: 3.25rem;
   }
 
   .cart-item__image {
@@ -7450,6 +7527,16 @@ html.with-fancybox body.hide-scrollbar {
   .cross-del:hover::before,
   .product-h-cart-list__cross-del:hover::before {
     color: #000;
+  }
+
+  .btn-go-up:hover {
+    background-color: #062aa3;
+  }
+
+  .btn-go-up:hover::before {
+    -webkit-transform: translateY(-15%);
+        -ms-transform: translateY(-15%);
+            transform: translateY(-15%);
   }
 
   .header-actions__action-item:hover:not(._active) {

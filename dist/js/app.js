@@ -311,7 +311,16 @@
     }
     function menuInit() {
         if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
-            if (bodyLockStatus && e.target.closest(".icon-menu")) {
+            if (bodyLockStatus && e.target.closest(".icon-menu")) if (document.querySelector("[data-cart]")) if (document.querySelector("[data-cart]").classList.contains("_open")) {
+                document.querySelector("[data-cart]").closest("[data-cart-wrapper]").click();
+                setTimeout((() => {
+                    bodyLock();
+                    document.documentElement.classList.add("menu-open");
+                }), 360);
+            } else {
+                bodyLockToggle();
+                document.documentElement.classList.toggle("menu-open");
+            } else {
                 bodyLockToggle();
                 document.documentElement.classList.toggle("menu-open");
             }
@@ -1232,6 +1241,9 @@
         };
         animate();
     }
+    function utils_getSlideTransformEl(slideEl) {
+        return slideEl.querySelector(".swiper-slide-transform") || slideEl.shadowRoot && slideEl.shadowRoot.querySelector(".swiper-slide-transform") || slideEl;
+    }
     function utils_elementChildren(element, selector) {
         if (selector === void 0) selector = "";
         return [ ...element.children ].filter((el => el.matches(selector)));
@@ -1294,6 +1306,14 @@
             parent = parent.parentElement;
         }
         return parents;
+    }
+    function utils_elementTransitionEnd(el, callback) {
+        function fireCallBack(e) {
+            if (e.target !== el) return;
+            callback.call(el, e);
+            el.removeEventListener("transitionend", fireCallBack);
+        }
+        if (callback) el.addEventListener("transitionend", fireCallBack);
     }
     function elementOuterSize(el, size, includeMargins) {
         const window = ssr_window_esm_getWindow();
@@ -4831,13 +4851,147 @@
             update
         });
     }
+    function effect_init_effectInit(params) {
+        const {effect, swiper, on, setTranslate, setTransition, overwriteParams, perspective, recreateShadows, getEffectParams} = params;
+        on("beforeInit", (() => {
+            if (swiper.params.effect !== effect) return;
+            swiper.classNames.push(`${swiper.params.containerModifierClass}${effect}`);
+            if (perspective && perspective()) swiper.classNames.push(`${swiper.params.containerModifierClass}3d`);
+            const overwriteParamsResult = overwriteParams ? overwriteParams() : {};
+            Object.assign(swiper.params, overwriteParamsResult);
+            Object.assign(swiper.originalParams, overwriteParamsResult);
+        }));
+        on("setTranslate", (() => {
+            if (swiper.params.effect !== effect) return;
+            setTranslate();
+        }));
+        on("setTransition", ((_s, duration) => {
+            if (swiper.params.effect !== effect) return;
+            setTransition(duration);
+        }));
+        on("transitionEnd", (() => {
+            if (swiper.params.effect !== effect) return;
+            if (recreateShadows) {
+                if (!getEffectParams || !getEffectParams().slideShadows) return;
+                swiper.slides.forEach((slideEl => {
+                    slideEl.querySelectorAll(".swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left").forEach((shadowEl => shadowEl.remove()));
+                }));
+                recreateShadows();
+            }
+        }));
+        let requireUpdateOnVirtual;
+        on("virtualUpdate", (() => {
+            if (swiper.params.effect !== effect) return;
+            if (!swiper.slides.length) requireUpdateOnVirtual = true;
+            requestAnimationFrame((() => {
+                if (requireUpdateOnVirtual && swiper.slides && swiper.slides.length) {
+                    setTranslate();
+                    requireUpdateOnVirtual = false;
+                }
+            }));
+        }));
+    }
+    function effect_target_effectTarget(effectParams, slideEl) {
+        const transformEl = utils_getSlideTransformEl(slideEl);
+        if (transformEl !== slideEl) {
+            transformEl.style.backfaceVisibility = "hidden";
+            transformEl.style["-webkit-backface-visibility"] = "hidden";
+        }
+        return transformEl;
+    }
+    function effect_virtual_transition_end_effectVirtualTransitionEnd(_ref) {
+        let {swiper, duration, transformElements, allSlides} = _ref;
+        const {activeIndex} = swiper;
+        const getSlide = el => {
+            if (!el.parentElement) {
+                const slide = swiper.slides.filter((slideEl => slideEl.shadowRoot && slideEl.shadowRoot === el.parentNode))[0];
+                return slide;
+            }
+            return el.parentElement;
+        };
+        if (swiper.params.virtualTranslate && duration !== 0) {
+            let eventTriggered = false;
+            let transitionEndTarget;
+            if (allSlides) transitionEndTarget = transformElements; else transitionEndTarget = transformElements.filter((transformEl => {
+                const el = transformEl.classList.contains("swiper-slide-transform") ? getSlide(transformEl) : transformEl;
+                return swiper.getSlideIndex(el) === activeIndex;
+            }));
+            transitionEndTarget.forEach((el => {
+                utils_elementTransitionEnd(el, (() => {
+                    if (eventTriggered) return;
+                    if (!swiper || swiper.destroyed) return;
+                    eventTriggered = true;
+                    swiper.animating = false;
+                    const evt = new window.CustomEvent("transitionend", {
+                        bubbles: true,
+                        cancelable: true
+                    });
+                    swiper.wrapperEl.dispatchEvent(evt);
+                }));
+            }));
+        }
+    }
+    function EffectFade(_ref) {
+        let {swiper, extendParams, on} = _ref;
+        extendParams({
+            fadeEffect: {
+                crossFade: false
+            }
+        });
+        const setTranslate = () => {
+            const {slides} = swiper;
+            const params = swiper.params.fadeEffect;
+            for (let i = 0; i < slides.length; i += 1) {
+                const slideEl = swiper.slides[i];
+                const offset = slideEl.swiperSlideOffset;
+                let tx = -offset;
+                if (!swiper.params.virtualTranslate) tx -= swiper.translate;
+                let ty = 0;
+                if (!swiper.isHorizontal()) {
+                    ty = tx;
+                    tx = 0;
+                }
+                const slideOpacity = swiper.params.fadeEffect.crossFade ? Math.max(1 - Math.abs(slideEl.progress), 0) : 1 + Math.min(Math.max(slideEl.progress, -1), 0);
+                const targetEl = effect_target_effectTarget(params, slideEl);
+                targetEl.style.opacity = slideOpacity;
+                targetEl.style.transform = `translate3d(${tx}px, ${ty}px, 0px)`;
+            }
+        };
+        const setTransition = duration => {
+            const transformElements = swiper.slides.map((slideEl => utils_getSlideTransformEl(slideEl)));
+            transformElements.forEach((el => {
+                el.style.transitionDuration = `${duration}ms`;
+            }));
+            effect_virtual_transition_end_effectVirtualTransitionEnd({
+                swiper,
+                duration,
+                transformElements,
+                allSlides: true
+            });
+        };
+        effect_init_effectInit({
+            effect: "fade",
+            swiper,
+            on,
+            setTranslate,
+            setTransition,
+            overwriteParams: () => ({
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                watchSlidesProgress: true,
+                spaceBetween: 0,
+                virtualTranslate: !swiper.params.cssMode
+            })
+        });
+    }
     function mainSlider() {
         const sliderBlock = document.querySelector('[data-slider="main-slider"]');
         if (sliderBlock) {
             const slider = sliderBlock.querySelector(`[data-slider]`);
             const sliderPagination = sliderBlock.querySelector("[data-slider-pagination]");
             if (slider) new Swiper(slider, {
-                modules: [ Pagination, Autoplay ],
+                modules: [ Pagination, Autoplay, EffectFade ],
+                effect: "fade",
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
@@ -9697,25 +9851,39 @@
     function openHideHeaderCart(e) {
         const headerCart = document.querySelector("[data-cart]");
         const headerCartLink = document.querySelector("[data-cart-link]");
-        if (e.target.closest("[data-cart-wrapper]") && !e.target.closest("[data-cart]") || e.target.closest("[data-h-cart-close]")) {
+        if (e.target.closest("[data-cart-wrapper]") && !e.target.closest("[data-cart]") || e.target.closest("[data-h-cart-close]") && !e.target.closest(".icon-menu")) {
             if (headerCart && !headerCartLink.classList.contains("_delay")) {
-                headerCart.classList.toggle("_open");
-                if (!headerCartLink.classList.contains("_active")) headerCartLink.classList.add("_active"); else if (headerCartLink.querySelector("span") && headerCartLink.querySelector("span").innerText.replace(/\D/g, "") === "") headerCartLink.classList.remove("_active");
+                function openHide() {
+                    headerCart.classList.toggle("_open");
+                    if (!headerCartLink.classList.contains("_active")) headerCartLink.classList.add("_active"); else if (headerCartLink.querySelector("span") && headerCartLink.querySelector("span").innerText.replace(/\D/g, "") === "") headerCartLink.classList.remove("_active");
+                }
                 if (window.innerWidth <= 800) {
                     headerCartLink.classList.add("_delay");
-                    bodyLockToggle(350);
+                    if (document.querySelector(".icon-menu")) if (document.documentElement.classList.contains("menu-open")) {
+                        document.documentElement.classList.remove("menu-open");
+                        setTimeout((() => {
+                            bodyLock();
+                            openHide();
+                        }), 500);
+                    } else {
+                        bodyLockToggle(350);
+                        openHide();
+                    } else {
+                        bodyLockToggle(350);
+                        openHide();
+                    }
                     setTimeout((() => {
                         headerCartLink.classList.remove("_delay");
                     }), 350);
-                }
+                } else openHide();
             }
-        } else if (!e.target.closest("[data-cart-wrapper]")) if (headerCart) {
+        } else if (!e.target.closest("[data-cart-wrapper]") && !e.target.closest(".icon-menu")) if (headerCart) {
             headerCart.classList.remove("_open");
             if (headerCartLink.querySelector("span") && headerCartLink.querySelector("span").innerText.replace(/\D/g, "") === "") {
                 headerCartLink.classList.remove("_active");
                 headerCartLink.classList.remove("_delay");
             }
-            if (window.innerWidth <= 800) bodyUnlock(350);
+            if (window.innerWidth <= 800 && !e.target.closest(".icon-menu")) bodyUnlock(350);
         }
     }
     function openHideHeaderSearch(e) {
@@ -9896,7 +10064,11 @@
                 quantityElem.textContent = Number(quantityElem.textContent) + (productQuantityToAdd ? Number(productQuantityToAdd.value) : 1);
                 console.log(`Product ID ==> ${productId}, New Quantity of product ==> ${newQuantityOfProduct}`);
             } else {
-                if (!headerCartWrapper.querySelector("[data-product-item]")) headerCartWrapper.querySelector(".attention").remove();
+                if (!headerCartWrapper.querySelector("[data-product-item]")) {
+                    headerCartWrapper.querySelector(".attention").remove();
+                    const btnCartPage = headerCartWrapper.querySelector("[data-h-cart-link]");
+                    btnCartPage.classList.remove("d-none");
+                }
                 const productImage = product.querySelector(".product-card__image-ibg") ? product.querySelector(".product-card__image-ibg") : product.querySelector("[data-product-image] img");
                 const productTitle = product.querySelector(".product-card__title") ? product.querySelector(".product-card__title") : product.querySelector("[data-product-title]");
                 const procuctPrice = product.querySelector(".product-card__price") ? product.querySelector(".product-card__price") : product.querySelector("[data-product-price]");
@@ -9924,12 +10096,14 @@
             if (emptyCart) {
                 const totalProducts = headerCartWrapper.querySelectorAll("[data-product-item]");
                 if (!totalProducts.length) {
+                    const btnCartPage = headerCartWrapper.querySelector("[data-h-cart-link]");
                     const headerCart = document.querySelector("[data-cart]");
                     const attention = document.createElement("div");
                     attention.textContent = emptyCart.dataset.emptyCart;
                     attention.classList.add("sub-title");
                     attention.classList.add("attention");
                     headerCart.firstElementChild.prepend(attention);
+                    btnCartPage.classList.add("d-none");
                 }
             }
         }
@@ -10131,6 +10305,26 @@
         }));
         return radioGroups;
     }
+    function goToTopBtn() {
+        const btnGoUp = document.querySelector(".btn-go-up");
+        if (btnGoUp) {
+            const startPoint = 50;
+            setTimeout((() => {
+                window.addEventListener("scroll", (function(e) {
+                    const scrollTop = window.scrollY;
+                    if (scrollTop >= startPoint) !btnGoUp.classList.contains("_show") ? btnGoUp.classList.add("_show") : null; else btnGoUp.classList.contains("_show") ? btnGoUp.classList.remove("_show") : null;
+                }));
+                btnGoUp.addEventListener("click", (e => {
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth"
+                    });
+                }));
+            }), 0);
+        }
+    }
+    goToTopBtn();
     isWebp();
     addLoadedClass();
     menuInit();
