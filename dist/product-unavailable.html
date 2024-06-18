@@ -5,7 +5,7 @@
 	<title>Narghilè Shisha 2655 mahi</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css?_v=20240614115005">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240618125018">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon.png">
@@ -20,7 +20,7 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700&family=Poppins:wght@400;500;600;700&display=swap&_v=20240614115005" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700&family=Poppins:wght@400;500;600;700&display=swap&_v=20240618125018" rel="stylesheet">
 </head>
 
 <body>
@@ -155,7 +155,7 @@
 							<picture><source srcset="img/logo/logo.webp" type="image/webp"><img width="248" height="89" fetchpriority="high" loading="eager" decoding="async" src="img/logo/logo.png" alt="logo Narghile Shisha"></picture>
 						</a>
 						<div class="header-bottom__menu menu">
-							<nav class="menu__body">
+							<nav data-submenu-spollers="991.98" class="menu__body">
 								<ul class="menu__list">
 									<li class="menu__item">
 										<a href="" class="menu__link header-action-link">
@@ -168,7 +168,31 @@
 									<li class="menu__item"><a href="" class="menu__link">Tabacchi</a></li>
 									<li class="menu__item"><a href="" class="menu__link">Outlet</a></li>
 									<li class="menu__item"><a href="" class="menu__link">Tabaccai</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Guida al Narghilé</a></li>
+									<li data-submenu-spoller class="menu__item">
+										<a href="#" class="menu__link">Guida al Narghilé</a>
+										<button data-submenu-link aria-label="aprire un sottomenu" class="menu__link-arrow _icon-arrow-down"></button>
+										<div data-submenu class="sub-menu">
+											<div class="sub-menu__wrapper">
+												<ul class="sub-menu__items scrollbar">
+													<li class="sub-menu__item">
+														<a href="#" class="sub-menu__link">Submenu voices №1</a>
+													</li>
+													<li class="sub-menu__item">
+														<a href="#" class="sub-menu__link">Submenu voices №2</a>
+													</li>
+													<li class="sub-menu__item">
+														<a href="#" class="sub-menu__link">Submenu voices №3</a>
+													</li>
+													<li class="sub-menu__item">
+														<a href="#" class="sub-menu__link">Submenu voices №4</a>
+													</li>
+													<li class="sub-menu__item">
+														<a href="#" class="sub-menu__link">Submenu voices №5</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
 									<li class="menu__item"><a href="" class="menu__link">Blog</a></li>
 								</ul>
 							</nav>
@@ -533,7 +557,8 @@
 		</footer>
 	</div>
 	<button aria-label="scorrere verso l'alto" class="btn-go-up _icon-arrow-double"></button>
-	<script async src="js/app.min.js?_v=20240614115005"></script>
+	<script defer src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20240618125018"></script>
+	<script defer src="js/app.min.js?_v=20240618125018"></script>
 </body>
 
 </html>
