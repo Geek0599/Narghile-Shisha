@@ -7644,7 +7644,7 @@ html.with-fancybox body.hide-scrollbar {
 }
 
 @media (any-hover: hover) {
-  .btn:hover {
+  .btn:not(.btn-disabled):hover {
     background-color: #062aa3;
   }
 
