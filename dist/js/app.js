@@ -9904,7 +9904,7 @@
                     headerCartLink.classList.remove("_active");
                     headerCartLink.classList.remove("_delay");
                 }
-                if (window.innerWidth <= 800 && !e.target.closest(".icon-menu")) bodyUnlock(350);
+                if (window.innerWidth <= 800 && !e.target.closest(".icon-menu") && !document.documentElement.closest(".menu-open")) bodyUnlock(350);
             }
         }
         function openHideHeaderSearch(e) {
@@ -10138,12 +10138,14 @@
                 const emptyCart = cartWrapper.dataset.emptyCart;
                 if (emptyCart) {
                     const totalProducts = cartWrapper.querySelectorAll("[data-product-id]");
+                    const headerCartLink = document.querySelector("[data-cart-wrapper] [data-cart-link]");
                     if (!totalProducts.length) {
                         const attention = document.createElement("div");
                         attention.textContent = emptyCart;
                         attention.classList.add("title");
                         attention.classList.add("attention");
                         cartWrapper.prepend(attention);
+                        headerCartLink ? headerCartLink.classList.remove("_active") : null;
                     }
                 }
             }
